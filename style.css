@@ -126,9 +126,6 @@ form{
     color: hsl(223, 87%, 63%);
     font-size: medium;
 }
-#error{
-    display: none;
-}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -156,7 +153,6 @@ form{
     .paragraph p{
         font-size: 16px;
     }
-
 
     form{
         display: flex;
@@ -203,10 +199,5 @@ form{
 
     .fab:hover{
         color: whitesmoke;
-    }
-
-    #error{
-        display: inline;
-        
     }
 }

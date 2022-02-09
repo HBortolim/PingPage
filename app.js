@@ -2,6 +2,7 @@ const input = document.querySelector('#emailInput');
 const form = document.querySelector('#myForm')
 const button = document.querySelector('#notify')
 const formContainer = document.querySelector('.form-container')
+const intro = document.querySelector('.intro')
 const validRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 form.addEventListener('submit', function (e){
@@ -19,31 +20,29 @@ function validateEmail(){
         createWarning('Please provide an email!');
     }
     else{
-        createWarning('Please provid a valid email address');
+        createWarning('Please provid a valid email address!');
     }
 }
 
 function createWarning(message){
     const existingWarning = document.getElementById('warning');
-    if (existingWarning) {
+    if (existingWarning || existingWarning) {
       existingWarning.remove();
     }
-
-    if((screen.width > 425) && (screen.width <= 2000)){
-        const warning = document.createElement('p');
-        warning.innerHTML = message;
-        warning.classList.add('warning');
-        warning.setAttribute('id','warning');
-        const error = document.createElement('span');
-        error.setAttribute('id','error');
-        error.append(warning)
-        formContainer.insertAdjacentElement('afterend',error);
-    }
-    else{
+    if(screen.width <= 425){
         const warning = document.createElement('p');
         warning.innerHTML = message;
         warning.classList.add('warning');
         warning.setAttribute('id','warning');
         input.insertAdjacentElement('afterend',warning);
     }
+    else{
+        const warning = document.createElement('p');
+        warning.innerHTML = message;
+        warning.classList.add('warning');
+        warning.setAttribute('id','warning');
+        intro.insertAdjacentElement('afterend',warning);
+    }
 }
+
+    
