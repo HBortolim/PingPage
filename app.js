@@ -18,15 +18,17 @@ function validateEmail(){
     }
     else if(inputValue == ''){
         createWarning('Please provide an email!');
+        document.getElementById('emailInput').style.borderColor='hsl(354, 100%, 66%)'
     }
     else{
         createWarning('Please provid a valid email address!');
+        document.getElementById('emailInput').style.borderColor='hsl(354, 100%, 66%)'
     }
 }
 
 function createWarning(message){
     const existingWarning = document.getElementById('warning');
-    if (existingWarning || existingWarning) {
+    if (existingWarning) {
       existingWarning.remove();
     }
     if(screen.width <= 425){
@@ -41,8 +43,6 @@ function createWarning(message){
         warning.innerHTML = message;
         warning.classList.add('warning');
         warning.setAttribute('id','warning');
-        intro.insertAdjacentElement('afterend',warning);
+        form.insertAdjacentElement('afterend',warning);
     }
 }
-
-    
